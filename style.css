@@ -1,0 +1,245 @@
+/*Im going to reset the default padding and margin html elements*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #9af78c 10%, #226e04 100%);
+  background-repeat: no-repeat;
+  padding-top: 40px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.form-wrapper {
+  max-width: 670px;
+  margin: 0 auto;
+}
+
+.form-container {
+  display: flex;
+  align-items: stretch;
+  color: #002333;
+}
+
+.form-left {
+  padding: 20px;
+  display: flex;
+  flex-basis: 50%;
+  flex-direction: column;
+  justify-content: center;
+  background: url("photos/Bild.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/*add shaddow on photo, but left side*/
+.form-left::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    240deg,
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 1) 200%
+  );
+}
+
+/*so lets style the text over the image*/
+.content {
+  /*lets change the text color*/
+  color: aliceblue;
+  z-index: 9;
+}
+
+.content h3 {
+  font-size: 48px;
+  line-height: 48px;
+  position: relative;
+  font-weight: 600;
+  margin-bottom: 50px;
+  letter-spacing: -0.5;
+  /* text-align: center; */
+}
+/* to make the line*/
+
+.content h3::after {
+  content: "";
+  width: 85%;
+  height: 3px;
+  background: aliceblue;
+  position: absolute;
+  bottom: -45%;
+  left: 0;
+}
+
+.content p {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+/* form right */
+
+.form-right {
+  flex-basis: 50%;
+  padding: 25px;
+  background: aliceblue;
+}
+
+.social-login {
+  border-bottom: 3px solid #2779067b;
+}
+
+.social-item {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 0px 20px;
+  height: 40px;
+  align-items: center;
+  border: 1px solid rgb(141, 195, 236);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.icon {
+  flex-basis: 20%;
+}
+
+.icon img {
+  height: 30px;
+  width: 30px;
+}
+
+.social-handle {
+  flex-basis: 80%;
+}
+
+.login-form {
+  padding-top: 20px;
+}
+
+.userinput input {
+  padding: 8px;
+  width: 100%;
+  font-size: 14px;
+  font-family: "Poppings";
+  font-weight: 500;
+  color: #002333;
+  display: inline-block;
+  margin-bottom: 20px;
+  border: 1px solid rgb(141, 195, 236);
+  border-radius: 4px;
+}
+
+/* lets change the border when we click in the box to write*/
+.userinput input:focus {
+  outline: none;
+  border-color: #2779067b;
+}
+
+/* now I change the place holer text color */
+.userinput input::placeholder {
+  font-size: 14px;
+  color: #226e04;
+}
+
+.remember-me {
+  margin-bottom: 20px;
+  /* padding top and bottom 10px, left and right only zero*/
+  padding: 10px 0;
+}
+
+.remember-me label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+.remember-me input {
+  width: 30px;
+}
+
+/* my own custom checkbox*/
+.remember-me label input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgb(141, 195, 236);
+  border-radius: 4px;
+  position: relative;
+}
+.remember-me label input::before {
+  content: "\2713";
+  font-size: 21px;
+  color: #9af78c;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 1.5px;
+  top: -3.8px;
+  visibility: none;
+  opacity: 0;
+}
+
+.remember-me label input:checked {
+  background-color: #226e04b9;
+}
+
+.remember-me label input:checked::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* style sign in btn*/
+.btn {
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  display: inline-block;
+  color: aliceblue;
+  cursor: pointer;
+  font-weight: 100;
+  background-color: rgb(40, 143, 38);
+  padding: 0 20px;
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+/* lets reduce opacity by hovering to show interactivity */
+.btn:hover {
+  opacity: 0.9;
+}
+
+.fp-link {
+  font-size: 14px;
+  font-weight: 700;
+  color: #002333;
+  text-decoration: none;
+}
+.fp-link:hover {
+  color: rgb(40, 143, 38);
+}
+
+.signup {
+  margin-top: 20px;
+}
+
+.signup p {
+  font-size: 14px;
+}
+.signup p a {
+  color: #002333;
+}
+
+.signup p a:hover {
+  color: rgb(40, 143, 38);
+}
