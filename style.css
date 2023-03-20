@@ -243,3 +243,42 @@ body {
 .signup p a:hover {
   color: rgb(40, 143, 38);
 }
+
+/* lets make it responsive */
+@media (max-width: 678px) {
+  body {
+    background: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .form-wrapper {
+    max-width: 400px;
+    padding-top: 20px;
+  }
+
+  .form-container {
+    position: relative;
+  }
+  .form-left .content {
+    /* we dont need wlc text on mobile screen, we make the display none */
+    display: none;
+  }
+  .form-left {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .form-left::before {
+    background: linear-gradient(135deg, #b2ffcc10, #3de868 100%);
+    opacity: 0.5;
+  }
+  .form-right {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(148, 196, 156, 0.7);
+  }
+}
